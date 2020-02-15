@@ -28,6 +28,7 @@ def hello_person():
     if random.random() > .5:
         fact_list.append("Investment Round: {}".format(random.choice(["A", "B", "C", "Seed", "IPO", "Acquired"])))
     fact_list.append("Purpose: {} for {}".format(fake.catch_phrase(), fake.bs()))
+    random.shuffle(fact_list)
 
     return render_template('index.html', company=co_name, ceo=ceo_name, facts=fact_list)
 
