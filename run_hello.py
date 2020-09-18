@@ -12,7 +12,7 @@ def hello_world():
     return render_template('index.html')
 
 @app.route('/hello/<name>', methods=['GET', 'POST'])
-def hello_world(name):
+def hello_name(name):
     return f"Hello, {name}"
 
 
