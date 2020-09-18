@@ -11,6 +11,10 @@ app = Flask(__name__)
 def hello_world():
     return render_template('index.html')
 
+@app.route('/hello/<name>', methods=['GET', 'POST'])
+def hello_world(name):
+    return f"Hello, {name}"
+
 
 @app.route('/random_company', methods=['GET'])
 def hello_person():
