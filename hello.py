@@ -11,5 +11,10 @@ def hello_world():
     return "Hello World."
 
 
+@app.route('/hello/<name>', methods=['GET', 'POST'])
+def hello_world(name):
+    return "Hello, {}.".format(name)
+
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8000)
