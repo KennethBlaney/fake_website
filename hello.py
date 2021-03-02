@@ -13,7 +13,7 @@ def hello_world():
 
 @app.route('/hello/<name>', methods=['GET', 'POST'])
 def hello_name(name):
-    return "Hello, {}.".format(name)
+    return render_template("sample.html", name=name)
 
 
 if __name__ == "__main__":
