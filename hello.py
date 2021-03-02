@@ -1,9 +1,8 @@
-import random
+import os
 
 from flask import render_template
 from flask import Flask
-from faker import Faker
-fake = Faker()
+
 app = Flask(__name__)
 
 
