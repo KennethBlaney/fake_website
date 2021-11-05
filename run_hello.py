@@ -21,6 +21,12 @@ def hello_name(name):
 def hello_person():
     co_name = fake.company()
     ceo_name = fake.name()
+    fact_list = generate_random_company()
+    random.shuffle(fact_list)
+    return render_template('index.html', company=co_name, ceo=ceo_name, facts=fact_list)
+
+
+def generate_random_company():
     fact_list = []
     if random.random() > .5:
         fact_list.append("CFO: {}".format(fake.name()))
@@ -33,10 +39,7 @@ def hello_person():
     if random.random() > .5:
         fact_list.append("Investment Round: {}".format(random.choice(["A", "B", "C", "Seed", "IPO", "Acquired"])))
     fact_list.append("Purpose: {} for {}".format(fake.catch_phrase(), fake.bs()))
-    random.shuffle(fact_list)
-
-    return render_template('index.html', company=co_name, ceo=ceo_name, facts=fact_list)
-
+    return fact_list
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8000)
